@@ -3,20 +3,22 @@ import InputForm from "./InputForm";
 import ExtraComponent from "./ExtraComponent";
 
 function BasicApp() {
-  const [input, setInput] = useState();
+  // const [input, setInput] = useState();
 
-  function reset() {
-    setInput("");
-  }
   return (
     <div>
       <h1>Basic App</h1>
-      <InputForm input={input} setInput={setInput} />
-      <br />
-      <button style={{ padding: "0.5rem", margin: "1rem" }} onClick={reset}>
-        Clear Input
-      </button>
-      <ExtraComponent />
+
+      {/* avoid using state in parent component to avoid re renders */}
+      {/* <InputForm input={input} setInput={setInput} /> */}
+      {/* <InputForm /> */}
+
+      {/* another way to prevent the re - rendering of a component is use children prop in thw component */}
+
+      {/* now extra component is child of inputform */}
+      <InputForm>
+        <ExtraComponent />
+      </InputForm>
     </div>
   );
 }
