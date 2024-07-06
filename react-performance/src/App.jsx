@@ -1,35 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import BasicApp from "./component/BasicApp";
+//re-rendering components in ReactJS is a part of the React Component Lifecycle and is called by React only. React components automatically re-render whenever there is a change in their state or props and provide dynamic content in accordance with user interactions.
 
+// Re-render mainly occurs if there is
+
+// Update in State
+// Update in prop
+// Re-rendering of the parent component
+// Unnecessary re-renders affect the app performance and cause loss of users’ battery which surely no user would want. Let’s see in detail why components get re-rendered and how to prevent unwanted re-rendering to optimize app components
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Re-rendering in Reactjs</h1>
+      <BasicApp />
+    </div>
+  );
 }
 
-export default App
+export default App;
